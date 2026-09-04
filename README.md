@@ -1,5 +1,7 @@
 # Expense Tracker
 
+[![Build and Test](https://github.com/mytestb1243-ui/expense-tracker/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/mytestb1243-ui/expense-tracker/actions/workflows/build-and-test.yml)
+
 A small command-line expense tracker built as a learning project in C# / .NET 10.
 
 It demonstrates a bunch of modern C# features in a real (if tiny) app:
