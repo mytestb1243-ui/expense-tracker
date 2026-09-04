@@ -19,7 +19,7 @@ file I/O, custom exceptions, and coding against an interface for persistence.
 ## Project layout
 
 ```
-First_Console_shafi/
+First_Console_shafi/              # the app
 ├── Program.cs                    # menu loop + all the commands
 ├── Models/
 │   ├── Expense.cs                # the Expense record
@@ -29,6 +29,8 @@ First_Console_shafi/
 │   └── JsonFileExpenseStore.cs   # JSON-file implementation
 └── Exceptions/
     └── InvalidExpenseException.cs
+
+First_Console_shafi.Tests/        # xUnit test project
 ```
 
 ## Requirements
@@ -45,4 +47,10 @@ dotnet run --project First_Console_shafi
 
 ```bash
 dotnet build
+```
+
+## Test
+
+```bash
+dotnet test
 ```

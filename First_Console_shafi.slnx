@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="First_Console_shafi.Tests/First_Console_shafi.Tests.csproj" />
   <Project Path="First_Console_shafi/First_Console_shafi.csproj" />
 </Solution>
