@@ -27,6 +27,8 @@ First_Console_shafi/              # the app
 ├── Data/
 │   ├── IExpenseStore.cs          # persistence abstraction
 │   └── JsonFileExpenseStore.cs   # JSON-file implementation
+├── Services/
+│   └── ExpenseService.cs         # validation / business rules (UI-free, testable)
 └── Exceptions/
     └── InvalidExpenseException.cs
 

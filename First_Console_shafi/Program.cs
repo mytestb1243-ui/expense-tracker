@@ -6,6 +6,7 @@ namespace First_Console_shafi;
 class Program
 {
     private static readonly IExpenseStore Store = new JsonFileExpenseStore("expenses.json");
+    private static readonly ExpenseService Service = new();
     private static List<Expense> _expenses = new();
 
     static async Task Main()
@@ -109,20 +110,10 @@ class Program
         string? notes = string.IsNullOrWhiteSpace(notesInput) ? null : notesInput;
 
         var expense = new Expense(Guid.NewGuid(), description, amount, category, date, notes);
-        Validate(expense); // throws InvalidExpenseException if something's off
+        Service.Validate(expense); // throws InvalidExpenseException if something's off
 
         _expenses.Add(expense);
         Console.WriteLine("Added.\n");
-    }
-
-    private static void Validate(Expense expense)
-    {
-        if (string.IsNullOrWhiteSpace(expense.Description))
-            throw new InvalidExpenseException("Description can't be empty.");
-        if (expense.Amount <= 0)
-            throw new InvalidExpenseException("Amount must be greater than zero.");
-        if (expense.Date > DateTime.Today)
-            throw new InvalidExpenseException("Date can't be in the future.");
     }
 
     private static void ViewAll()
@@ -237,7 +228,7 @@ class Program
 
         // "with" expression: records give you non-destructive updates for free.
         var updated = existing with { Amount = newAmount };
-        Validate(updated);
+        Service.Validate(updated);
 
         var index = _expenses.IndexOf(existing);
         _expenses[index] = updated;
