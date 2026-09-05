@@ -436,3 +436,9 @@ FodyWeavers.xsd
 
 # Expense data written by the app at runtime
 expenses.json
+
+# Per-user auth data (password hashes) and personal expense/budget/export data
+users.json
+expenses.*.json
+budgets.*.json
+*-expenses.csv
